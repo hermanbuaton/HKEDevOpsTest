@@ -1,0 +1,13 @@
+{
+    "name": "testappfor41085",
+    "version": "1.0.0",
+    "description": "Test Node.js on  Docker",
+    "author": "Herman BUATON",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.16.4"
+    }
+}
