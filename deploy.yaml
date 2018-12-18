@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: pleungmsdevops
+  name: hkedevopstest
 spec:
   replicas: 1
   strategy:
@@ -12,21 +12,21 @@ spec:
   template:
     metadata:
       labels:
-        app: pleungmsdevops
+        app: hkedevopstest
     spec:
       containers:
-      - name: pleungtestapp
-        image: pleungcon.azurecr.io/pleungms/pleungmsdevops:$BUILD_ID
+      - name: hkedevopstest
+        image: hermanacr.azurecr.io/hermanbuaton/hkedevopstest:$BUILD_ID
         ports:
-        - containerPort: 80
+        - containerPort: 41085
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: pleungmsdevops
+  name: hkedevopstest
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: 41085
   selector:
-    app: pleungmsdevops
+    app: hkedevopstest
