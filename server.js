@@ -20,7 +20,7 @@ var app = express();
 // Routes
 app.get('/', function (req, res) {
   var now = new Date();
-  res.send('Hello World! Today is ' + ( now.GetMonth() + 1 ) + now.GetDate());
+  res.send('Hello World! Today is ' + ( now.getMonth() + 1 ) + now.getDate());
 });
 
 // Create the server
