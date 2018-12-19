@@ -19,8 +19,9 @@ var app = express();
 
 // Routes
 app.get('/', function (req, res) {
-  var now = new Date();
+  res.writeHead(200, {'Content-Type': 'text/html'});
   res.sendFile('/index.html');
+  // var now = new Date();
   // res.send('Hello World! Today is ' + now.getFullYear() + "." + ( now.getMonth() + 1 ) + "." + now.getDate());
 });
 
