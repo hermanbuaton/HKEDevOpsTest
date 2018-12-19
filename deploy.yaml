@@ -15,7 +15,7 @@ spec:
         app: herman-hkedevopstest
     spec:
       containers:
-      - name: herman-hkedevopstest
+      - name: herman-hkedevopstest-2
         image: docker.io/pleungdev/herman-hkedevopstest:$BUILD_ID
         ports:
         - containerPort: 41085
