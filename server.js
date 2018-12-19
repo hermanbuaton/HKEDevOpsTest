@@ -15,14 +15,23 @@
 var iPortNum = 41085;
 
 var express = require('express');
+var fs = require('fs');
 var app = express();
 
 // Routes
 app.get('/', function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.sendFile('/index.html');
+  // res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write('./index.html');
   // var now = new Date();
   // res.send('Hello World! Today is ' + now.getFullYear() + "." + ( now.getMonth() + 1 ) + "." + now.getDate());
+});
+
+app.get('/chinese', function (req, res) {
+    fs.readFile('./index.html',function (err, data){
+        res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+        res.write(data);
+        res.end();
+    });
 });
 
 // Create the server
