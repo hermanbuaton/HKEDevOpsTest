@@ -19,7 +19,8 @@ var app = express();
 
 // Routes
 app.get('/', function (req, res) {
-  res.send('Hello World! [from pleungtestapp]');
+  var now = new Date();
+  res.send('Hello World! Today is ' + ( now.GetMonth() + 1 ) + now.GetDate());
 });
 
 // Create the server
